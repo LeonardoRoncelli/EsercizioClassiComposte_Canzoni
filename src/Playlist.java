@@ -42,4 +42,27 @@ public class Playlist {
             }
         }
     }
+    public void aggiungiCanzone(String nomeCanzone,String nomeCantante, double durata){
+        int contaOccupato=0;
+        boolean pieno=false;
+        Canzone nuovaCanzone=new Canzone(nomeCanzone,nomeCantante,durata);
+        for(int i=0;i<miaPlaylist.length;i++){
+            if(miaPlaylist[i]!=null){
+                contaOccupato++;
+                if (contaOccupato==miaPlaylist.length){
+                    System.out.println("La playlist è piena");
+                    pieno=true;
+                    break;
+                }
+            }
+        }
+        if (!pieno){
+            for(int i=0;i<miaPlaylist.length;i++){
+                if(miaPlaylist[i]==null){
+                    miaPlaylist[i]=nuovaCanzone;
+                    break;
+                }
+            }
+        }
+    }
 }
