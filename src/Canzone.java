@@ -20,4 +20,14 @@ public class Canzone {
     public double getDurata(){
         return durata;
     }
+    public Canzone(){
+        nomeCanzone="Sconosciuto";
+        nomeCantante="Sconosciuto";
+        durata=0;
+    }
+    public Canzone(String nomeCanzone,String nomeCantante,double durata){
+        this.nomeCanzone=nomeCanzone;
+        this.nomeCantante=nomeCantante;
+        this.durata=durata;
+    }
 }
