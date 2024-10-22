@@ -9,6 +9,15 @@ public class Playlist {
         this.miaPlaylist = miaPlaylist;
     }
     public Playlist(){
-        Canzone[]canzoni=new Canzone[100];
+        miaPlaylist=new Canzone[100];
+    }
+    public int numeroCanzoni(){
+        int conta=0;
+        for(int i=0;i<miaPlaylist.length;i++){
+            if(miaPlaylist[i]!=null){
+                conta++;
+            }
+        }
+        return conta;
     }
 }
