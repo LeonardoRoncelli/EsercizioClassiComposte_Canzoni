@@ -30,4 +30,7 @@ public class Canzone {
         this.nomeCantante=nomeCantante;
         this.durata=durata;
     }
+    public String toString(){
+        return ("Nome dell'autore: "+nomeCantante+", "+"nome del brano: "+nomeCanzone+", "+"durata del brano: "+durata+".");
+    }
 }
