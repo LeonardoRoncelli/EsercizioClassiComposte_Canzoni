@@ -87,4 +87,19 @@ public class Playlist {
         }
         return cantante;
     }
+    public Canzone[] ricercaCanzoni(String nomeCantante){
+        Canzone[]canzoniTrovate=new Canzone[miaPlaylist.length];
+        int conta=0;
+        for(int i=0;i<miaPlaylist.length;i++){
+            if(miaPlaylist[i]!=null&&miaPlaylist[i].getNomeCantante().equals(nomeCantante)){
+                canzoniTrovate[conta]=miaPlaylist[i];
+                conta++;
+            }
+        }
+        Canzone[]finale=new Canzone[conta];
+        for(int i=0;i<conta;i++){
+            finale[i]=canzoniTrovate[i];
+        }
+        return finale;
+    }
 }
