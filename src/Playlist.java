@@ -1,5 +1,6 @@
 public class Playlist {
     private Canzone[]miaPlaylist;
+    private int lunghezza;
 
     public Canzone[] getMiaPlaylist() {
         return miaPlaylist;
@@ -9,7 +10,8 @@ public class Playlist {
         this.miaPlaylist = miaPlaylist;
     }
     public Playlist(){
-        miaPlaylist=new Canzone[100];
+        lunghezza=100;
+        miaPlaylist=new Canzone[lunghezza];
     }
     public int numeroCanzoni(){
         int conta=0;
@@ -65,14 +67,24 @@ public class Playlist {
             }
         }
     }
-    public void cancellaCanzone(Canzone canzoneCanc){ //Da completare
+    public void cancellaCanzone(Canzone canzoneCanc){
         Canzone temp=new Canzone();
         for(int i=0;i<miaPlaylist.length;i++){
-            if(miaPlaylist[i]==canzoneCanc){
+            if(miaPlaylist[i].equals(canzoneCanc)){
                 temp=miaPlaylist[miaPlaylist.length-1];
                 miaPlaylist[miaPlaylist.length-1]=miaPlaylist[i];
                 miaPlaylist[i]=temp;
+                lunghezza--;
             }
         }
+    }
+    public String ricercaCantante(String nomeCanzone){
+        String cantante="";
+        for(int i=0;i<miaPlaylist.length;i++){
+            if(miaPlaylist[i].equals(nomeCanzone)){
+                cantante=miaPlaylist[i].getNomeCantante();
+            }
+        }
+        return cantante;
     }
 }
