@@ -102,4 +102,17 @@ public class Playlist {
         }
         return finale;
     }
+    public String toString(){
+        String risultato = "[";
+        for (int i = 0; i < miaPlaylist.length; i++) {
+            if (miaPlaylist[i] != null) {
+                risultato += miaPlaylist[i];
+                if (i < miaPlaylist.length - 1) {
+                    risultato += ", ";
+                }
+            }
+        }
+        risultato += "]";
+        return risultato;
+    }
 }
